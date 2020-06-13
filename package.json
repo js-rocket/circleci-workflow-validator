@@ -5,6 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 6000",
     "build": "vue-cli-service build --dest docs",
+    "build2": "sed -i'' -e 's:/js/:js/:g' docs/index.html",
+    "build3": "sed -i'' -e 's:/css/:css/:g' docs/index.html",
+    "update:docs": "yarn build && yarn build2 && yarn build3",
     "lint": "vue-cli-service lint"
   },
   "license": "MIT",
