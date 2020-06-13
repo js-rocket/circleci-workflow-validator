@@ -123,7 +123,7 @@ export default {
               job = jobObj[jobId];
             }
 
-            const jobConfig = this.configjs.jobs[jobId];
+            const jobConfig = job.type === 'approval' ? { type: 'approval' } : this.configjs.jobs[jobId];
 
             // For "only" skip everything else
             let branchesFilter = get(job, 'filters.branches.only');
@@ -151,6 +151,15 @@ export default {
             // This is not supported, so we create a copy with ID tied to a workflow it runs in
             const uuid = `${jobId}-${workflowId}`;
 
+            const nodeColor = jobConfig.type === 'approval' ? '#A692EC' : 'white';
+            const preText = jobConfig.type === 'approval' ? '||' : `${jobConfig.parallelism || 1}x`;
+
+            g.setNode(uuid, {
+              label: `${preText} ${jobId}`,
+              style: `stroke: #ccc; border-radius: 20px; fill: ${nodeColor}`,
+            });
+
+/* Disable old node renderer
             let html = '<div class="nodeWrap">';
             html += `<div class="parallelism">${jobConfig.parallelism || 1}x</div>`;
             html += `<div class="name">${jobId}</div>`;
@@ -163,7 +172,7 @@ export default {
               ry: 5,
               padding: 0,
             });
-
+*/
             // Cluster jobs to a task
             g.setParent(uuid, workflowId);
 
