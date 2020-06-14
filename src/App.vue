@@ -4,7 +4,9 @@
     <h1>CircleCI 2 validator</h1>
     <p>Paste your CircleCI 2 <code>config.yml</code> to visualise it</p>
   </header>
-  <input class="branch" type="text" v-model="branch">
+  <div class="branch">
+    <span>Branch Name: </span> <input type="text" v-model="branch">
+  </div>
   <codemirror v-model="config" />
   <div v-show="errorMessage" class="graph errorMessage">
     <h2>Error</h2>
@@ -256,6 +258,9 @@ main {
   grid-area: branch;
   font-size: 1.5rem;
   padding: $padding;
+}
+.branch input {
+  font-size: 1.5rem;
 }
 
 header {
