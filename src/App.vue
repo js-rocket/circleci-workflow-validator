@@ -49,6 +49,10 @@ export default {
   watch: {
     branch() { this.draw(); },
     configjs() {
+
+      // Clear graph before redrawing
+      document.querySelector('.graph svg').parentNode.innerHTML = '<svg><g/></svg>';
+
       try {
         this.reportError(null);
         this.draw();
