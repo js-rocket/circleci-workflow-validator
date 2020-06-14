@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --port 6000",
+    "serve": "vue-cli-service serve --port 3001",
     "build": "vue-cli-service build --dest docs",
     "build2": "sed -i'' -e 's:/js/:js/:g' docs/index.html",
     "build3": "sed -i'' -e 's:/css/:css/:g' docs/index.html",
