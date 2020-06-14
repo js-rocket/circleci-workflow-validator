@@ -14,9 +14,9 @@
   </div>
   <div v-show="!errorMessage" class="graph"><svg><g/></svg></div>
   <footer>
-    <a href="https://github.com/JackuB/circleci-workflow-validator">GitHub</a>
+    <a href="https://github.com/js-rocket/circleci-workflow-validator">GitHub</a>
     &middot;
-    <a href="https://mikul.as">J</a>
+    <a href="https://js-rocket.github.io/circleci-workflow-validator">WWW</a>
   </footer>
 </main>
 </template>

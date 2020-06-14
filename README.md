@@ -7,4 +7,4 @@ See Circle CI workflows and preview them in different branches.
 
 This fork adds support for approval step in workflow and also includes a minor UI fix
 
-[![CircleCI 2 workflow validation](./public/screenshot.png)](https://circle.mikul.as)
+[![CircleCI 2 workflow validation](./public/screenshot.png)](https://js-rocket.github.io/circleci-workflow-validator)
