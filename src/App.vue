@@ -51,7 +51,6 @@ export default {
   watch: {
     branch() { this.draw(); },
     configjs() {
-
       // Clear graph before redrawing
       document.querySelector('.graph svg').parentNode.innerHTML = '<svg><g/></svg>';
 
@@ -95,6 +94,7 @@ export default {
       const zoom = d3.zoom().on('zoom', () => inner.attr('transform', d3.event.transform));
       svg.call(zoom);
 
+      // eslint-disable-next-line new-cap
       const render = new dagreD3.render();
 
       // compound: true for clustering support
@@ -125,6 +125,7 @@ export default {
             let jobId = jobObj;
             let job = {};
             if (typeof jobObj !== 'string') {
+              // eslint-disable-next-line prefer-destructuring
               jobId = Object.keys(jobObj)[0];
               job = jobObj[jobId];
             }
@@ -165,7 +166,7 @@ export default {
               style: `stroke: #ccc; border-radius: 20px; fill: ${nodeColor}`,
             });
 
-/* Disable old node renderer
+            /* Disable old node renderer
             let html = '<div class="nodeWrap">';
             html += `<div class="parallelism">${jobConfig.parallelism || 1}x</div>`;
             html += `<div class="name">${jobId}</div>`;
@@ -178,7 +179,7 @@ export default {
               ry: 5,
               padding: 0,
             });
-*/
+            */
             // Cluster jobs to a task
             g.setParent(uuid, workflowId);
 

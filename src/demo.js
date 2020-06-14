@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 const demo1 = `version: 2
 jobs:
   node:
@@ -159,10 +161,10 @@ workflows:
       - android:
           requires:
             - hold_android
-`
+`;
 
 
-demo2 = `# Modified example from:
+const demo2 = `# Modified example from:
 # https://github.com/circleci/frontend
 
 # Try changing "master" branch to something else
@@ -409,4 +411,4 @@ jobs:
 `;
 
 
-module.exports = demo1;
+module.exports = demo2;
